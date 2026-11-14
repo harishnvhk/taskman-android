@@ -101,8 +101,8 @@ class _DashState extends State<Dashboard> {
   Widget build(BuildContext c) {
     final m = s;
     if (m == null) return const Center(child: CircularProgressIndicator());
-    final double ramUsed = 100 * (1 - m['ramFree'] as num)/ (m['ramTotal'] as num));
-    final double diskUsed = 100 * (1 - m['diskFree'] as num)/ (m['diskTotal'] as num));
+    final double ramUsed = 100 * (1 - (m['ramFree'] as num) / (m['ramTotal'] as num));
+    final double diskUsed = 100 * (1 - (m['diskFree'] as num) / (m['diskTotal'] as num));
     final cp = m['cpu'] as int;
     return ListView(padding: const EdgeInsets.all(12), children: [
       Tile('CPU', cp < 0 ? 'N/A' : '$cp%', 'Estimated from core clock speeds',
