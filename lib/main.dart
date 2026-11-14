@@ -89,7 +89,7 @@ class _DashState extends State<Dashboard> {
       rx = r;
       tx = x;
       add(cpu, math.max(0, m['cpu'] as int).toDouble());
-      add(ram, 100 * (1 - m['ramFree'] / m['ramTotal']));
+      add(ram, 100 * (1 - m['ramFree'] as num)/ (m['ramTotal'] as num));
       add(dn, down);
       setState(() => s = m);
     } catch (_) {}
